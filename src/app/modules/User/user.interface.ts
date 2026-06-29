@@ -17,6 +17,7 @@ export interface TUser {
   profileImg?: string;
   role: 'superAdmin' | 'admin'   | 'courier' | 'user' | 'company';
   status: 'active' | 'blocked';
+  levelStatus: 'user' | 'discount' | 'fixed';
   emailStatus: 'verified' | 'unverified' | 'rejected';
   jobPosted?: number;
   userType?: 'user' | 'company';
@@ -31,6 +32,8 @@ export interface TUser {
   btwNumber?: string;
   document?: string;
   legalForm?: string;
+  discount?: number;
+  fixedPrice?: number;
   isBlocked: boolean;
   isDeleted: boolean;
 }
