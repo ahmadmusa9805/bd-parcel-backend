@@ -11,6 +11,7 @@ import { ChatRoom } from '../ChatRoom/ChatRoom.model';
 import { DailyRoute } from '../dailyRoute/dailyRoute.model';
 import { Notification } from '../Notification/Notification.model';
 import { SendEmail } from '../../utils/sendEmail';
+import { DistancePrice } from '../DistancePrice/DistancePrice.model';
 // Arrow function to generate the next jobId
 const generateJobId = async (): Promise<string> => {
   // Find the latest job in the collection
@@ -37,6 +38,7 @@ const generateJobId = async (): Promise<string> => {
 };
 
 const createJobIntoDB = async (payload: any) => {
+
   const { contact } = payload;
 
   const userdata = {
@@ -77,10 +79,12 @@ const createJobIntoDB = async (payload: any) => {
   // console.log('newJobId', newJobId);
   //  console.log('Payload in createJobIntoDB:', payload);
   // Create Job
+// const discountPrice = existingUser?.discount ? existingUser?.discount : 0;
+// const distancePrice = await DistancePrice.find();
 
   payload.courierPrice = payload.totalPrice ? payload.totalPrice : 0;
 
-  console.log('payload.....', payload);
+  console.log('payload.....musa', payload);
 
   const createdJob = await Job.create(payload);
   console.log('createdJob.....', createdJob);

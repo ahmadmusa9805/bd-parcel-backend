@@ -39,7 +39,7 @@ export class SendEmail {
   }
 static async sendInvoiceEmail(email: string, payload: any): Promise<void> {    
 
-
+console.log("payload=1");
 
 const html = `
 <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: auto;">
@@ -126,9 +126,11 @@ const html = `
 
 </div>
 `;
+console.log("payload=2");
 
   // ✅ Generate PDF
   const pdfBuffer = await generatePDF(html);
+console.log("payload=3");
 
 // ✅ Clean email message (from earlier)
   const text = `
@@ -145,6 +147,7 @@ Thank you for choosing us.
 Best regards,
 Admin / Support Team
 `;
+console.log("payload=4");
 
 console.log("html", html)
 
@@ -168,6 +171,7 @@ const mailOptions = {
     ],
 
     };
+console.log("payload=5");
 
     try {
       await this.transporter.sendMail(mailOptions);
@@ -213,7 +217,8 @@ const fileExtension = getFileExtension(document);
 
   const mailOptions = {
     from: config.admin_email_user,
-    to: config.admin_email_user || 'amaahmadmusa@gmail.com',
+    to: config.admin_email_user,
+    // to: config.admin_email_user || 'amaahmadmusa@gmail.com',
     subject: `New Message For Confirmation of Courier Register from ${name}`,
     text: `${message}
     `,
