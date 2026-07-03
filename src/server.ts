@@ -7,6 +7,7 @@ import seedSuperAdmin from './app/DB/index.js';
 // import { createPaymentWithMollie } from './app/modules/mollie_payments/mollie.service.js';
 // let server: Server;
 import { initializeChatSocket } from './app/modules/Chat/chat.socket.js';
+// import { getGoogleReviewStats } from './app/googlePlace/google.js';
 // let server: Server;
 async function main() {
   try {
@@ -30,6 +31,18 @@ async function main() {
 
     // Attach chat socket handlers
     initializeChatSocket(io);
+
+
+//  const result = await getGoogleReviewStats();
+
+    // console.log("========== Google Reviews ==========");
+    // console.log(result);
+    // console.log(`Average Rating : ${result.average}`);
+    // console.log(`Total Reviews  : ${result.totalReviews}`);
+    // console.log("====================================");
+
+
+
 
 
     httpServer.listen(config.port, () => {
