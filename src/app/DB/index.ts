@@ -4,7 +4,7 @@ import { User } from '../modules/User/user.model';
 
 const superUser = {
   name: { firstName: 'Super', lastName: 'Admin' },
-  email:  config.super_admin_email || 'ahmadmusa9805@gmail.com',
+  email:  config.super_admin_email || 'koerierplatform@gmail.com',
   password: config.super_admin_password || '12345',
   otpVerified: true,
   needsPasswordChange: false,
