@@ -19,6 +19,8 @@ export default {
   email_app_password: process.env.EMAIL_APP_PASSWORD,
   admin_email_user: process.env.ADMIN_EMAIL_USER, 
   super_admin_email: process.env.SUPER_ADMIN_EMAIL, 
+  place_id: process.env.PLACE_ID,
+  google_api_key: process.env.GOOGLE_API_KEY,
   s3: {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
