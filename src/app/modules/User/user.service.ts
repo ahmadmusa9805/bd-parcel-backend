@@ -108,7 +108,12 @@ const getSingleUserIntoDB = async (id: string, user:any) => {
 
 const getAllUsersFromDB = async (query: Record<string, unknown>) => {
     const studentQuery = new QueryBuilder(
-    User.find(),
+    User.find({
+  role: { $nin: ["superAdmin"] },
+  // role: { $nin: ["superAdmin", "admin"] },
+  status: { $ne: "blocked" },
+  // isDeleted: false,
+}),
     // User.find({status: { $ne: 'blocked' }, isDeleted: false}),
     query,
   )
@@ -283,7 +288,7 @@ const updateUserIntoDB = async (
 ) => {
 let verify = false
 
-console.log('payload for now',payload);
+console.log('payload for now===========>>>>>>>>',payload);
 
  if(payload.profileVerified == 'verified'){
     const result = await User.findOne({ email: payload.email });   
