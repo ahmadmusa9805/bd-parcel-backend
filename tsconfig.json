@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*.ts", "src/types/express.d.ts", "src/app/modules/Quote/quote.test.js"],
+  "include": ["src/**/*.ts", "src/types/express.d.ts", "src/app/modules/Quote/quote.test.js", "src/app/googlePlace/google.ts"],
   "exclude": ["node_modules", "dist"], // which files to skip
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
